@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.title{
+    padding-top: 30px;
+    text-align: center;
+    font-size: 3.5rem;
+    font-family: 'Bebas Neue', cursive;
+    color: #D80032;
+}
+
+.resenas{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 230px);
+    gap: 40px;
+    padding: 40px;
+    justify-content: center;
+}
+
+@media (max-width: 560px){
+    .resenas{
+        grid-template-columns: 100%;
+    }
+}

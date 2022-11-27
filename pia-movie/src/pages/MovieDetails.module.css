@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.detailsContainer{
+    /*padding-top: 30px;*/
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.col{
+    max-width: 400px;
+    margin: 15px;
+    height: auto;
+    height: 80%;
+}
+
+.movieImage{
+    border-radius: 15px;
+}
+
+.movieDetails{
+    font-size: 1.5rem;
+}
+
+.firstItem{
+    margin-top: 0;
+    color: white;
+    margin-bottom: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+}
