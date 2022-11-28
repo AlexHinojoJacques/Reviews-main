@@ -6,6 +6,8 @@ import styles from "./MovieDetails.module.css";
 import Navbar from "../components/Navbar/Navbar";
 import { Spinner } from '../components/Spinner';
 import { CreatePost } from '../services/postService';
+import Swal from 'sweetalert2'
+
 
 export function MovieDetails() {
     const { movieId } = useParams();
@@ -43,9 +45,15 @@ export function MovieDetails() {
             const response = await CreatePost(newReview);
     
             if (response.message) {
-            alert("Error al crear post, intente más tarde.");
+            //alert("Error al crear post, intente más tarde.");
+            Swal.fire(
+                'Error', 'ups creo que hubo un error', 'error'
+             )
             } else {
-            alert("Se ha creado el post con éxito.");
+            //alert("Se ha creado el post con éxito.");
+            Swal.fire(
+                'Exito', 'Se ha creado el post con éxito.', 'success'
+            )
             document.location.href = "/";
             }
         

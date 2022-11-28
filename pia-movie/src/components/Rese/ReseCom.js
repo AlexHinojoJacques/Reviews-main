@@ -48,7 +48,7 @@ export const ReseCom = () => {
                                     <h1>{post.movie}</h1>
                                     <h4>{post.name}</h4>
                                     <p>{post.description}</p>
-                                    <button className="btn">See more</button>
+                                    
                                 </div>
                             ))
                         }

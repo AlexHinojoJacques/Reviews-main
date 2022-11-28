@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Avatar, Button, Grid, Link, Paper, TextField, Typography } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { margin } from "@mui/system";
+import Swal from 'sweetalert2'
 
 import { LogInService } from "../../services/UsuarioService";
 
@@ -32,7 +33,10 @@ const Login = () => {
 
         const res = await LogInService(usuario);
         if (res.message) {
-        alert("Error en usuario o contraseña.");
+        //alert("Error en usuario o contraseña.");
+        Swal.fire(
+            'Error', 'Error en usuario o contraseña.', 'error'
+         )
         } else {
         localStorage.setItem("usuario", JSON.stringify(res.userdb));
         localStorage.setItem("token", JSON.stringify(res.token));

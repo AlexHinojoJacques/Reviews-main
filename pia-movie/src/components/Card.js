@@ -3,9 +3,13 @@ import { useParams } from "react-router-dom";
 import React, { useState, useEffect  } from 'react'
 import './Card.css'
 import { GetById } from "../services/UsuarioService";
+import Swal from 'sweetalert2'
 
 function authFailed() {
-    alert("El token ha expirado, inicie sesión de nuevo")
+    //alert("El token ha expirado, inicie sesión de nuevo")
+    Swal.fire(
+      'Error', 'El token ha expirado, inicie sesión de nuevo.', 'error'
+   )
     localStorage.clear()
     document.location.href = "/login"
 };

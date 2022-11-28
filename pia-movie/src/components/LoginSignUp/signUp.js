@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Avatar, Button, Grid, Paper, TextField, Typography } from '@mui/material';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-
+import Swal from 'sweetalert2'
 import { CreateUser } from "../../services/UsuarioService";  //Añadir los servicios
 
 const SignUp=()=>{
@@ -32,14 +32,23 @@ const SignUp=()=>{
         e.preventDefault();
 
         if (!regex.test(user.pass)) {
-        alert("La contraseña debe tener más de 8 caracteres.");
+        //alert("La contraseña debe tener más de 8 caracteres.");
+        Swal.fire(
+            'Advertencia', 'La contraseña debe tener más de 8 caracteres.', 'warning'
+         )
         } else {
         const response = await CreateUser(user);
 
         if (response.message) {
-            alert("Error al registrar usuario, intente más tarde.");
+            //alert("Error al registrar usuario, intente más tarde.");
+            Swal.fire(
+                'Error', 'Error al registrar usuario, intente más tarde.', 'error'
+             )
         } else {
-            alert("Te has registrado con exito");
+            //alert("Te has registrado con exito");
+            Swal.fire(
+                'Exito', 'Te has registrado con énxito.', 'success'
+            )
             localStorage.setItem("usuario", JSON.stringify(response.newObject));
             localStorage.setItem("token", JSON.stringify(response.token));
             document.location.href = "/";
